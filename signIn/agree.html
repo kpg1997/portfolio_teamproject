@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>agree</title>
+    <link rel="shortcut icon" href="/faviconico" type="image/x-icon">
+    <link rel="icon" href="/faviconico" type="image/x-icon">
+    <script src="/jquery"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+        .menu-bar{
+            display: none;
+        }
+        body {
+            background-image: url('/background');
+        }
+
+        ul>li {
+            list-style: none
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #joinForm {
+            width: 460px;
+            margin: 30px auto;
+        }
+
+        ul.join_box {
+            background-color: #181b33;
+        }
+
+        .checkBox,
+        .checkBox>ul {
+            position: relative;
+        }
+
+        .checkBox>ul>li {
+            float: left;
+        }
+
+        .checkBox>ul>li:first-child {
+            width: 85%;
+            padding: 15px;
+            font-weight: 600;
+            color: #888;
+        }
+
+        .checkBox>ul>li:nth-child(2) {
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            margin-top: -12px;
+        }
+
+        .checkBox textarea {
+            width: 96%;
+            height: 90px;
+            margin: 0 2%;
+            background-color: #f7f7f7;
+            color: #888(0, 0, 0);
+            border: none;
+        }
+
+        .footBtwrap {
+            margin-top: 15px;
+        }
+
+        .footBtwrap>li {
+            float: left;
+            width: 50%;
+            height: 60px;
+        }
+
+        .footBtwrap>li>button {
+            display: block;
+            width: 100%;
+            height: 100%;
+            font-size: 20px;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        .fpmgBt1 {
+            background-color: #fff;
+            color: black
+        }
+
+        .fpmgBt2 {
+            background-color: #181b33;
+            color: #fff
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <header id="total-header"></header>
+    </div>
+    <div id="joinForm">
+        <ul class="join_box">
+            <li class="checkBox check01">
+                <ul class="clearfix">
+                    <li>이용약관, 개인정보 수집 및 이용,
+                        위치정보 이용약관(선택), 프로모션 안내
+                        메일 수신(선택)에 모두 동의합니다.</li>
+                    <li class="checkAllBtn">
+                        <input type="checkbox" name="chkAll" id="chk" class="chkAll" onclick="selectAll(this)" />
+                    </li>
+                </ul>
+            </li>
+            <li class="checkBox check02">
+                <ul class="clearfix">
+                    <li>이용약관 동의(필수)</li>
+                    <li class="checkBtn">
+                        <input type="checkbox" name="chk">
+                    </li>
+                </ul>
+                <textarea name="" id="" disabled>CDKPL은 회사에서 제공하는 인터넷 사이트 서비스를 이용하는 이용자님의 개인 정보를 매우 소중하게 생각하고 있으며, 이용자의 개인 정보를 보호하기 위하여 최선의 노력을 다하고 있습니다.  회사의 개인정보처리방침은 관련 법률 및 고시의 변경 또는 내부 운영방침의 변경에 따라 변경될 수 있습니다. 회사의 개인정보처리방침이 수정될 경우 변경된 사항은 홈페이지를 통하여 공지합니다.
+   </textarea>
+            </li>
+            <li class="checkBox check03">
+                <ul class="clearfix">
+                    <li>개인정보 수집 및 이용에 대한 안내(필수)</li>
+                    <li class="checkBtn">
+                        <input type="checkbox" name="chk">
+                    </li>
+                </ul>
+
+                <textarea name="" id="" disabled>회사는 개인정보 보호법』, 『정보통신망 이용촉진 및 정보보호 등에 관한 법률』을 비롯한 모든 개인정보보호 관련 법률규정을 준수하고 있으며, 회사의 개인정보처리방침을 별도로 제정하고 이를 준수함으로써 이용자의 개인정보를 더욱 보호하고 있습니다. 또한 회사는 개인정보처리방침을 항상 회사 홈페이지 첫 화면에 공개함으로써 이용자들이 언제나 쉽게 열람할 수 있도록 조치하고 있습니다.
+                   
+   </textarea>
+            </li>
+            <li class="checkBox check03">
+                <ul class="clearfix">
+                    <li>위치정보 이용약관 동의(선택)</li>
+                    <li class="checkBtn">
+                        <input type="checkbox" name="chk">
+                    </li>
+                </ul>
+
+                <textarea name="" id="" disabled>제1조	개인정보 수집에 대한 동의 및 수집방법, 제2조	개인정보 수집항목 및 수집 이용목적, 제3조	개인정보의 제공, 제4조	개인정보의 처리 위탁,  제5조	개인정보의 보유 이용기간, 제6조	개인정보 보호업무 및 관련 고출사항 처리 부서, 제7조	개인정보 자동수집 장치에 의한 개인정보 수집, 제8조	개인정보 열람 및 정정 등제9조	개인정보 수집 이용 제공에 대한 동의 철회 제10조	개인정보보호를 위한 관리적 기술적 물리적 대책파기 절차 및 파기 방법,	제11조	이용자 및 법정대리인의 권리와 그 행사방법	제12조	보호정책 변경시 공지의무
+   </textarea>
+            </li>
+            <li class="checkBox check04">
+                <ul class="clearfix">
+                    <li>이벤트 등 프로모션 알림 메일 수신(선택)</li>
+                    <li class="checkBtn">
+                        <input type="checkbox" name="chk">
+                    </li>
+                </ul>
+
+            </li>
+        </ul>
+        <ul class="footBtwrap clearfix">
+            <li><button class="fpmgBt1" onclick="register()">동의</button></li>
+            <li><button class="fpmgBt2" onclick="back()">취소</button></li>
+        </ul>
+    </div>
+
+    <script>
+        //전체동의클릭
+        function selectAll(selectAll) {
+            const checkboxes
+                = document.querySelectorAll('input[type="checkbox"]');
+
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = selectAll.checked
+            })
+        }
+        //동의버튼
+        function register() {
+            var check1 = document.getElementsByName('chk')[0].checked;
+            var check2 = document.getElementsByName('chk')[1].checked;
+            if ((check1 == true) && (check2 == true)) {
+                location.href = '/signIn.html';
+            } else {
+                alert('필수체크를 해주세요');
+            }
+        }
+        //취소버튼
+        function back() {
+            history.back();
+        }
+        $(document).ready(function () {
+            $("#total-header").load("/header.html")
+        });
+    </script>
+</body>
+
+</html>

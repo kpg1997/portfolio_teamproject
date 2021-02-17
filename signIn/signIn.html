@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+    <link rel="stylesheet" href="/signInCss">
+    <link rel="shortcut icon" href="/faviconico" type="image/x-icon">
+    <link rel="icon" href="/faviconico" type="image/x-icon">
+    <script src="/jquery"></script>
+</head>
+
+<body>
+    <div class="header">
+        <header id="total-header" ></header>
+    </div>
+    <div id="body">
+        <div class="join-form-panel">
+            <div class="signup-title">Sign up</div>
+            <form name="FORM" action="/signIn" method="POST">
+                <div class="join-form">
+                    <div><input type="text" readOnly  id="userId" autofocus placeholder="ID"  name="userid">&nbsp;&nbsp;&nbsp;<div id="over">
+                            Check ID</div>
+                        <div class="text" id="text-id"></div>
+                    </div>
+                    <div><input type="text" id="userName"  placeholder="Name" name="username">
+                        <div class="text" id="text-name"></div>
+                    </div>
+                    <div><input type="email" id="userEmail" placeholder="Email" name="useremail">
+                        <div class="text" id="text-email"></div>
+                    </div>
+
+                    <div><input type="password" id="userPwd" placeholder="Password" name="userpwd">
+                        <div class="text" id="text-pwd"></div>
+                    </div>
+                    <div><input type="password" id="userRepwd" placeholder="Confirm Password">
+                        <div class="text" id="text-repwd"></div>
+                    </div>
+                    <div><input type="checkbox" id="checkbox" value='0'>
+                        <dic class="Terms"
+                            onclick='window.open("/Terms-of-Service.html","Terms-of-Service","width=1000,height=500,scrollbars=yes")'>
+                            Agree(Click)</dic>
+                    </div>
+                </div>
+                <div id="join" class="join-div" onclick="join()">Submit</div>
+            </form>
+        </div>
+
+    </div>
+    
+    <script src="/signInjs"></script>
+</body>
+
+</html>

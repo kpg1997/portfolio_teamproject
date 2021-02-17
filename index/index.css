@@ -1,0 +1,153 @@
+@font-face{
+    src: url("/font");
+    font-family: "main-font";
+}
+/* 
+.title{
+    font-family: "main-font";
+    font-size: 100px;
+    text-align: center;
+} */
+
+/* body{ */
+    /* background-image: url(./images/backgroundimage.jpg); */
+    /* width: 100%;
+    height: 100%;
+    margin: 0; */
+/* } */
+
+#videobcg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden;
+}
+
+
+
+/* .top-logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+
+/* .btn-login{
+    background-color: none;
+    border-radius: 10px;
+    border:2px solid rgb(242, 242, 255);
+    margin-bottom: 10px;
+    margin-top: 13px;
+    padding-left: 5px ;
+    padding-right: 5px;
+    float: right;
+    font-family: "main-font";
+    font-size: 25px;
+    margin-right: 15px;
+    
+} */
+/* .login-img{
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    margin-left: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+} */
+
+
+#headers{
+    background-color:none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: inline-block;
+    text-align:  center;
+}
+
+
+/* .top-bar{
+    position: fixed; 
+    height:70px;
+    width: 100%;
+    display: block;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+} */
+/* .top-bar a{
+    text-decoration: none;
+    color:  rgb(242, 242, 255);
+} */
+
+
+/* .menu-main-bar {
+    margin-top: 100px;
+}
+.menu-bar{
+    font-family: "main-font";
+}
+
+.menu-bar ul{
+    list-style: none;
+    font-size: 30px;
+    display: inline-block;
+    margin-bottom:px;
+}
+
+.menu-bar ul li{
+    float: left;
+    padding: 0 40px 0 40px;
+    display: inline-block;
+    margin-left: -40px;
+    
+} */
+/* 
+.menu-bar ul li a{
+    display: block;
+    width: 150px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    line-height: 40px;
+}
+.menu-bar ul li a:hover{
+    background-color:  none ;
+    color: white;
+    
+}
+
+.menu-bar ul ul{
+    position: absolute;
+    display: none;
+}
+.menu-bar ul ul li{
+    display: block;
+    background-color: none ;
+    color: rgb(0, 0, 0);
+}
+
+#mb-ul{
+    min-width: 300px;
+    background-color: none ;
+    text-align: center;
+} */
+
+.main-slogan{
+    font-family: "main-font";
+    font-size: 75px;
+    padding-top: 150px;
+    color: white;
+}
+
+#total-footer{
+    position: absolute;
+    bottom: 0;
+    top: 130%;
+}

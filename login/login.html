@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="shortcut icon" href="/faviconico" type="image/x-icon">
+    <link rel="icon" href="/faviconico" type="image/x-icon">
+    <link rel="stylesheet" href="/loginCss">
+    <script src="/jquery"></script>
+</head>
+
+<body>
+    <div class="header">
+        <header id="total-header"></header>
+    </div>
+    <div id="body-panel">
+        <div class="login-form-panel">
+            <div class="login-title">Login</div>
+            <div class="form-input">
+                <form method="POST" action="/login" name="loginForm">
+                    <div id='lopgin-form'>
+                        <div class="input-panel">
+                            <div id="inpid"><input id="input-id" name="userid" type="text" placeholder="ID" autofocus>
+                            </div>
+                            <div id="inppwd"><input id="input-pwd" name="userpwd" type="password"
+                                    placeholder="PASSWORD"></div>
+                        </div>
+                        <div id="login" onclick="login()">enter</div>
+                </form>
+            </div>
+            <div class="join-find-id-pwd">
+                <div class='buttons' id="find-id" onclick="find()">Forgot Id/Password</div>
+                <div class='buttons' id="join" onclick="join()">Sign Up</div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="/loginjs"></script>
+</body>
+
+</html>

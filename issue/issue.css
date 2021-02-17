@@ -1,0 +1,61 @@
+/* @font-face{
+    src:url(../index/fonts/Imbue/);
+    font-family: "main-font";
+} */
+
+@font-face{
+    src: url(../index/fonts/Nanum_Myeongjo/);
+    font-family: "context-font";
+}
+.header {
+    background-color:   #181b33;
+}
+.menu-bar ul ul li {
+    background-color:   #181b33;;
+}
+.body{
+    background-image: url('/issuebg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+
+.section{
+    color: white;
+    font-size: 40px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr 11fr);
+    grid-template-rows: repeat(2,650px);
+    grid-auto-rows: 650px ;
+}
+
+/* .sub-sec{
+    border: 3px solid yellow;
+} */
+.sub-sec:nth-child(1){
+    grid-row: 1/4;
+}
+
+#brand-sec{
+    writing-mode: vertical-rl;
+    font-size: 70px;
+    padding-top: 55%;
+}
+
+#date-sec{
+    font-size: 200px;
+    color: red;
+    padding-top: 20%;
+    padding-left: 50%;
+    font-family: "main-font";
+}
+
+#title-sec{
+    font-size: 200px;
+    color: red;
+    font-family: "main-font";
+    padding-left: 15%;
+}

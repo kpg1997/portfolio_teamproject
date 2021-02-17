@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/faviconico" type="image/x-icon">
+    <link rel="icon" href="/faviconico" type="image/x-icon">
+    <script src="/jquery"></script>
+    <title>Document</title>
+    <!-- ////////////////////////CSS///////////////////////////// -->
+    <style>
+        @font-face {
+            src: url('/font');
+            font-family: "main-font";
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color:  none;
+            margin-top: 0;
+            width: 100%;
+            height: 210px;
+        }
+
+        .title {
+            font-family: "main-font";
+            font-size: 75px;
+            padding-top: 50px;
+            padding-bottom: 20px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            width: 150px;
+            margin: auto;
+        }
+
+        .top-logo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+        }
+
+        .top-bar {
+            position: fixed;
+            width: 100%;
+            display: block;
+            /* background-color: #4c4c4c; */
+
+            /* position: fixed; */
+            /* height: ;
+        width: 100%;
+        display: inline;
+        grid-template-columns: auto auto auto; */
+        }
+
+        .top-bar a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+        }
+
+        .btn-login {
+            background-color: none;
+            border-radius: 10px;
+            border: 2px solid rgb(242, 242, 255);
+            margin-bottom: 10px;
+            margin-top: 13px;
+            padding-left: 5px;
+            padding-right: 5px;
+            float: right;
+            color: rgb(242, 242, 255);
+        }
+
+        .btn-login {
+            font-family: "main-font";
+            font-size: 25px;
+            margin-right: 15px;
+        }
+
+        .login-img {
+            height: 20px;
+            width: 20px;
+            background-color: none;
+            margin-left: 5px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .menu-main-bar {
+            margin-top: 100px;
+        }
+
+        .menu-bar {
+            font-family: "main-font";
+            text-align: center;
+        }
+
+        .menu-bar ul {
+            list-style: none;
+            font-size: 30px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .menu-bar ul li {
+            display: inline-block;
+            margin-left: 0px;
+        }
+
+        .menu-bar ul li a {
+            display: block;
+            width: 150px;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            line-height: 50px;
+        }
+
+        .menu-bar ul li a:hover {
+            background-color: none;
+            text-decoration: underline white;
+        }
+
+        .menu-bar ul ul {
+            position: absolute;
+            display: none;
+        }
+
+        .menu-bar ul ul li {
+            display: block;
+            background-color:  none;
+        }
+
+        .last-li {
+            border-radius: 0 0 20px 20px;
+        }
+
+        #mb-ul {
+            text-align: center;
+        }
+
+        #username {
+            border-radius: 10px;
+            border: 2px solid rgb(242, 242, 255);
+            margin-bottom: 10px;
+            margin-top: 13px;
+            padding-left: 5px;
+            padding-right: 5px;
+            float: right;
+            color: rgb(242, 242, 255);
+        }
+
+        #afterLogin {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- //////////////////////상단바//////////////////////////////////////// -->
+    <div class="header">
+        <div class="top-bar">
+            <div class="top-logo" onclick="index()"><img src="/images" alt=""></div>
+            <div id="beforeLogin">
+                <buttton class="btn-login"><a href="/agree.html">Sign Up</a></buttton>
+                <buttton class="btn-login"><a href="/login.html">Login<img src="/before-login-img"
+                            class="login-img"></a>
+                </buttton>
+            </div>
+            <div>
+                <div id="afterLogin">
+                    <buttton class="btn-login"><a href="/logout">Logout</a></buttton>
+                    <div class="btn-login">
+                        <%=data%>
+                            <input type="hidden" id="usernameInput" value="<%=data%>"><img src="/after-login-img"
+                                class="login-img">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="title" onclick="index()">CDKPL</div>
+            <div class="menu-bar">
+                <ul id="mb-ul">
+                    <li><a href="/group.html">GROUP</a>
+                        <ul>
+                            <li><a href="/group.html">GROUP</a></li>
+                            <li class="last-li"><a href="/brandIntro.html">BRAND</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="now-page">NOTICE</a>
+                        <ul>
+                            <li class="last-li"><a href="/issue.html">ISSUE</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">BOARD</a>
+                        <ul>
+                            <li><a href="/board.html/1">BOARD</a></li>
+                            <li class="last-li"><a href="/qna.html/1">QnA</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">LOCATION</a>
+                        <ul>
+                            <li class="last-li"><a href="/location.html">LOCATION</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(".menu-bar ul li").hover(function () {
+            $(this).find("ul").stop().fadeToggle(300);
+        });
+        $('#username').ready(function () {
+            console.log(document.getElementById('usernameInput2'))
+            console.log('header!!!!', $('#usernameInput').val().search('=data'));
+
+            if ($('#usernameInput').val().search('=data') == 2) {
+                $('#afterLogin').hide();
+                $('#beforeLogin').show();
+            } else {
+                $('#afterLogin').show();
+                $('#beforeLogin').hide();
+            }
+        })
+        function index(){
+            location.href="/index.html"
+        }
+    </script>
+
+</body>
+
+</html>

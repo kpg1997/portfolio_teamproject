@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body {
+            width: 500px;
+            border: 1px solid black;
+            padding: 15px;
+            height: 70px;
+            margin: auto;
+            border-radius: 15px;
+            background-color: #181b33;
+        }
+
+        #results {
+            color: white;
+        }
+
+        button {
+            background-color: #181b33;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+            border: 3px solid #ffcaca;
+        }
+
+        .res,#use-userid {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body">
+        <form action="/overlap" method="POST" name="overForm">
+            <input type="text" value="" placeholder="ID" name="userid" autofocus>
+            <button onclick="overlap()">중복검사</button>
+
+
+        </form>
+        <!-- <form action="/useId" method="POST" name="useForm"> -->
+        <div id="results" style="display: none;">
+            <input type="hidden" id="over" value="<%=data%>" name="useid">
+            <div class="res">
+                <%=data%>는 사용가능한 아이디입니다.
+            </div>
+            <button id="use-userid" onclick="useid()">사용하기</button>
+        </div>
+    </div>
+    <!-- </form> -->
+    <script>
+        var a = document.getElementById('over').value;
+        var b = document.getElementById('results');
+        console.log(a)
+        if (a.search('=data') != 2) {
+            b.style.display = "inline";
+        }
+
+        function overlap() {
+            overForm.submit();
+        }
+        function useid() {
+            opener.FORM.userid.value = "<%=data%>";
+            console.log('<%=data%>');
+            self.close();
+
+        }
+    </script>
+</body>
+
+</html>

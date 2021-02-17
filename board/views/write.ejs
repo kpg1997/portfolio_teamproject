@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    게시판 작성페이지
+
+    <form action="/board/write" method="POST">
+      <div> 제목  <input type="text" name="title" id="title" required></div>
+      <div> 작성자 </div> 
+      <div> 공개여부 <input type="radio" name="open" id="open" value="공개" required>공개
+                  <input type="radio" name="open" id="open" value="비공개" required>비공개
+      </div>
+      <textarea name="content" id="content" cols="30" rows="10" required></textarea>
+      <input type="submit" value="등록하기" onclick="checking()">
+      </form>
+      <button onclick="rendbor()">게시판으로</button>
+  <script>
+  function checking(){
+      alert('등록완료!');
+  }
+  function rendbor(){
+      location.href="/board";
+  }
+  </script>
+  
+  
+  </body>
+</html>

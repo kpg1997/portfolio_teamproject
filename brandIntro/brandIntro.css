@@ -1,0 +1,105 @@
+/*header*/
+
+body{
+    background-image: url();
+    width: 100%;
+    height: 110%;
+    margin: 0;
+    background-size: cover;
+}
+
+#videobcg {
+    
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden;
+}
+
+/*body*/
+body{
+    background-color: black;
+    
+}
+.main-slogan{
+    font-family: "main-font";
+    font-size: 75px;
+    padding-top: 150px;
+}
+.body{
+    width: 1300px;
+    margin-top: 15%;
+    margin-bottom: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    
+}
+
+.Brand-main-title{
+    font-size: 60px;
+    font-family: "main-font";
+    text-align: center;
+    /* margin-bottom: 2%; */
+    color: white;
+    margin-bottom: 400px;
+    margin-top: 250px;
+}
+.brand-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+}
+.brand-title-logo{
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+}
+
+.brand-panel-list{
+    display: none;
+}
+
+.aa .brand-imgList{ display:inline-block;}
+#cloneList{
+    display: none;
+}
+.Clone-List{
+    margin: auto;
+    text-align: center;
+}
+div>.brand-img{
+    margin-left:3px ;
+}
+#brand-img0{
+    margin-bottom: 33px;
+    margin-left: 33px;
+}
+#brand-img1{
+    margin-bottom: -33px;
+    margin-left: 33px;
+}
+#brand-img2{
+    margin-bottom: 33px;
+    margin-left: 33px;
+}
+#brand-img3{
+    margin-bottom: -33px;
+    margin-left: 33px;
+}
+#brand-img4{
+    margin-bottom: 33px;
+    margin-left: 33px;
+}
+.header {
+    background-color:   #181b33;
+    
+}
+.menu-bar ul ul li {
+    background-color:   #181b33;;
+}

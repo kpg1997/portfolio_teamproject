@@ -1,0 +1,57 @@
+@font-face {
+    src: url("/font");
+    font-family: "main-font";
+}
+
+.qna-detail-panel {
+    width: 800px;
+    margin: auto;
+    vertical-align: middle;
+    border: 1px solid black;
+    box-shadow: 5px 5px 5px;
+    padding: 15px;
+    margin-top: 170px;
+    background-color:  #181b33;
+}
+.header {
+    background-color:   #181b33;
+}
+.menu-bar ul ul li {
+    background-color:   #181b33;;
+}
+#videobcg {
+    
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden;
+}
+
+.qna-qnano,
+.qna-title,
+.qna-writter,
+.qna-content,
+.qna-date,
+.qna-userid {
+    margin-top: 13px;
+    color: white;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 15px;
+    color: white;
+}
+.button:hover {
+   font-weight: bold;
+}

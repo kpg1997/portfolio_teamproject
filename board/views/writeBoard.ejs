@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/faviconico" type="image/x-icon">
+    <link rel="icon" href="/faviconico" type="image/x-icon">
+    <script src="/jquery"></script>
+    <title>게시판 만들기</title>
+    <style>
+        .header {
+            background-color: #181b33;
+           
+        }
+
+        .menu-bar ul ul li {
+            background-color: #181b33;
+            ;
+        }
+
+        @font-face {
+            src: url("/font");
+            font-family: "main-font";
+        }
+
+        .write-board-panel {
+            width: 800px;
+            margin: auto;
+            vertical-align: middle;
+            border: 1px solid black;
+            box-shadow: 5px 5px 5px;
+            padding: 15px;
+            margin-top: 170px;
+            background-color: #181b33;
+            opacity: 0.9;
+            border-radius: 10px;
+        }
+
+        .buttons {
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            cursor: pointer;
+            margin-left: 15px;
+            color: white;
+        }
+
+        body {
+            background-image: url('/boardimage');
+            background-size: cover;
+        }
+
+        .button:hover {
+            font-weight: bold;
+        }
+
+        .ti,
+        .user,
+        .con {
+            color: white;
+        }
+
+        .ti{
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+        .user{
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .con{
+            margin-bottom: 10px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #boardtitle{
+            font-size: 25px;
+            border-radius: 10px;
+        }
+        #boardcontent{
+            border-radius: 10px;
+            font-size: 15px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <header id="total-header"></header>
+    </div>
+    <div class="write-board-panel">
+
+        <form action="/write" name="writeForm" method="POST">
+            <div class="ti">제목 : <input type="text" name="title" id="boardtitle"></div>
+            <div class="user">작성자 : <%=data%><input type="hidden" name="userid" id="boardwrite" value="<%=data%>"></div>
+            <div class="con"><br> <textarea type="text" name="content" id="boardcontent" cols="95"
+                    rows="10" placeholder="내용을 입력하세요"></textarea></div>
+        </form>
+
+        <div class="buttons">
+            <div onclick="writeBoard()" class="button">작성하기</div>
+            <div onclick="history.back()" class="button">뒤로가기</div>
+        </div>
+    </div>
+    <script>
+        function writeBoard() {
+            var title = document.getElementById('boardtitle').value;
+            var content = document.getElementById('boardcontent').value;
+            if ((title != "") & (content != "")) {
+                var con = confirm("작성하시겠습니까?");
+                if (con == true) {
+                    writeForm.submit() = "/write"
+                }
+            } else {
+                alert('제목과 내용을 입력하시오')
+            }
+        }
+        $(document).ready(function () {
+            $("#total-header").load("/header.html")
+        });
+    </script>
+</body>
+
+</html>

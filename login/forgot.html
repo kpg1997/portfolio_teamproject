@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot</title>
+    <link rel="stylesheet" href="/loginCss">
+    <style>
+        .forgot-panels {
+            width: 500px;
+            height: 200px;
+            background-color: #181b33;
+            padding: 30px;
+            margin: auto;
+            border-radius: 30px;
+        }
+
+        .click-id,
+        .click-pwd,
+        .di {
+            display: inline-block;
+            color: #ffffff;
+        }
+        form div{
+            color: white;
+        }
+        .di {
+            margin-left: 10px;
+            margin-right: 10px;
+            font-weight: normal;
+        }
+
+        .inpal,
+        button {
+            display: inline-block;
+            vertical-align: middle;
+            
+        }
+        .find-btns{
+            border: 3px solid white;
+            background-color:  #181b33;
+            color: white;
+        }
+    </style>
+    <script src="/jquery"></script>
+</head>
+
+<body>
+    <div class="forgot-panels">
+        <div class="click-id-pwd">
+            <div class="click-id" style="cursor: pointer;font-weight: bold;">Find ID</div>
+            <div class="di">|</div>
+            <div class="click-pwd" style="cursor: pointer;">Find Password</div>
+        </div>
+        <div class="input-panel" style="margin-top: 20px;">
+            <div class="input-id-panel">
+                <form action="/forgotId" method="post" name="formId">
+                    <div class="inpal">
+                        <div><input type="text" placeholder="Name" id="find-id-name" name="username"></div>
+                        <div><input type="email" placeholder="Email" id="find-id-email" name="useremail"></div>
+                    </div>
+                    <button class="find-btns" id="find-id-btn" onclick="findUserID()">Find ID</button>
+                </form>
+                <form action="/forgotId" method="get">
+                    <div>아이디 : <div id="show-user-id">
+                            <input type="text" readonly value="<%=data%>" id="show_id">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="input-pwd-panel" style="display: none;">
+                <form action="/forgotPwd" method="post" name="formPwd">
+                    <div class="inpal">
+                        <div><input type="id" placeholder="ID" id="find-pwd-id" name="userid"></div>
+                        <div><input type="text" placeholder="Name" id="find-pwd-name" name="username"></div>
+                        <div><input type="email" placeholder="Email" id="find-pwd-email" name="useremail"></div>
+                    </div>
+                    <button class="find-btns" id="find-pwd-btn" onclick="findUserPwd()">Find Password</button>
+                </form>
+                <form action="/forgotPwd" method="get">
+                    <div>비밀번호 : <div id="show-user-pwd">
+                            <input type="text" readonly value="<%=data2%>" id="show_pwd">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/loginjs"></script>
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Board</title>
+  <link rel="shortcut icon" href="/faviconico" type="image/x-icon">
+  <link rel="icon" href="/faviconico" type="image/x-icon">
+  <script src="/jquery"></script>
+  <style>
+    @font-face {
+      src: url("/font");
+      font-family: "main-font";
+    }
+
+    .header {
+      background-color: #181b33;
+    }
+
+    .menu-bar ul ul li {
+      background-color: #181b33;
+      ;
+    }
+
+    .board-panel .board-list div {
+      display: inline-block;
+    }
+
+    .board-panel {
+      width: 800px;
+      margin: auto;
+      vertical-align: middle;
+      border: 1px solid black;
+      box-shadow: 5px 5px 5px;
+      padding: 15px;
+      margin-top: 170px;
+      background-color: #181b33;
+      margin-bottom: 25%;
+      border-radius: 15px;
+      opacity: 0.95;
+    }
+
+
+    .board-boardno {
+      color: white;
+      width: 50px;
+      text-align: center;
+    }
+
+    .board-title {
+      width: 600px;
+      color: white;
+    }
+
+    .board-title a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .board-userid {
+      width: 100px;
+      color: white;
+    }
+
+    div form,
+    div button {
+      text-align: right;
+    }
+
+    #write {
+      color: rgb(0, 0, 0);
+      width: 70px;
+      cursor: pointer;
+      border: 2px solid black;
+      border-radius: 5px;
+      background-color: #ffffff;
+      padding-left: 5px;
+    }
+
+    #write:hover {
+      font-weight: bold;
+    }
+
+    #searchbtn {
+      margin-left: 3px;
+      background-color: #ffffff;
+      width: 45px;
+      height: 30px;
+      text-align: center;
+      cursor: pointer;
+      color: rgb(0, 0, 0);
+      border: 2px solid black;
+      border-radius: 5px;
+    }
+
+    #search-panel {
+      height: 25px;
+    }
+
+    .main-title {
+      font-size: 50px;
+      text-align: center;
+      color: white;
+      font-family: "main-font";
+    }
+
+    body {
+      background-image: url('/boardimage');
+      background-size: cover;
+    }
+
+    .num {
+      display: inline-block;
+      color: white;
+    }
+    .num a{
+      text-decoration: none;
+      color: white;
+    }
+    .num-panel{
+      text-align: center;
+    }
+    .board-topline{
+      color: white;
+      font-size: 20px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <header id="total-header"></header>
+  </div>
+  <div class="board-panel">
+    <div class="main-title"> Board</div>
+    <div style="margin-bottom: 12px;margin-top: 12px;">
+      <form action="/searchBoard.html/1" method="post"><input type="text" placeholder="제목" name="searchBoard"
+          id="search-panel"><button id="searchbtn">검색</button></form>
+    </div>
+    <div class="board-topline">
+      <div class="topline-detail">No.</div>
+      <div class="topline-detail">제목</div>
+      <div class="topline-detail">작성자</div> 
+    </div>
+    <hr>
+    <% for(let i=(page * page_num) - page_num;i < (page * page_num);i++){ if(i> leng){
+      i++;
+      }else{
+      var datas = data[i]
+      %>
+      <div class="board-list">
+        <div class="board-boardno">
+          <%=datas.boardno%><input type="hidden" name="title" value="<%=data[i].boardno%>">
+        </div>
+        <div class="board-title"><a href="/selectBoard.html/<%=data[i].boardno%>">
+            <%=datas.title%>
+          </a></div>
+        <div class="board-userid">
+          <%=datas.userid%>
+        </div>
+      </div>
+      <hr>
+      <% }} %>
+      <div class="num-panel">
+        <% for(var j=0; j < data.length / page_num; j++){ %>
+          <div class="num" id="<%=j+1%>">[<a href="/board.html/<%= j + 1 %>">
+              <%= j + 1 %>
+            </a>]</div>
+          <% } %>
+        </div>
+            <div onclick="writeForm()" id="write">작성하기</div>
+  </div>
+  <footer id="total-footer"></footer>
+  <script>
+    function upclick() {
+      location.href = "/board/up";
+    }
+    function writeForm() {
+      location.href = '/write.html';
+    }
+    $(document).ready(function () {
+      $("#total-header").load("/header.html")
+    });
+    $(document).ready(function () {
+      $("#total-footer").load("/totalfooter.html")
+    });
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+        #showcontent{
+          display: contents;
+        }
+      
+      </style>
+</head>
+<body>
+    <%=upclick(data)%>
+  
+    게시판 보여주기
+    <hr>
+    <form action="/board/show" method="post">
+      <input type="hidden" name="id" value="<%=data[num].id%>">
+    제목:<input type="hidden" name="title" id="title" value="<%=data[num].title%>"><span id="showtitle"><%=data[num].title%></span>
+    
+    <hr>
+    <textarea  name="content" id="content" cols="30" rows="10" style="display: none"><%=data[num].content%></textarea><span id="showcontent"><%=data[num].content%></span>
+    <p>
+
+      <input type="hidden" value="등록하기" id="submit" onclick="checking()">
+    
+    </p>
+  </form>
+  <form action="/board/show?" method="GET" onsubmit="return del()">
+    <input type="hidden" name="delete" value="<%=data[num].id%>">
+<input type="submit" value="삭제하기" >
+  </form>
+  <div>
+  <form action="/board/show?" method="GET">
+    <input type="hidden" name="loveit" value="1">
+    <input type="hidden" name="loveitid" value="<%=data[num].id%>">
+  <input type="submit" value="추천">
+  </form>
+
+  </div>
+  <button onclick="change()">수정하기</button>
+  <button onclick="pagechange()" id="<%=page%>">게시판으로</button>
+  
+    <script>
+      function change(){
+          document.getElementById('showtitle').style.display='none';
+          document.getElementById('showcontent').style.display='none';
+          document.getElementById('content').style.display="";
+          let titleshow=document.getElementById('title');
+          titleshow.type='text';
+          let submitshow=document.getElementById('submit');
+          submitshow.type='submit';
+      }
+
+      function checking(){
+        alert('등록완료');
+      }
+
+      function del(){
+        let check=confirm("정말 삭제하시겠습니까??");
+        if(check==true){
+          setTimeout(() => {
+            if(document.getElementById("0")){
+          location.href="/board";
+        }
+        else if(document.getElementById("1")){
+        location.href="/board/up";
+     }
+          }, 1000);
+          return true;
+        }
+      }
+      function pagechange(){
+        if(document.getElementById("0")){
+          location.href="/board";
+        }
+     else if(document.getElementById("1")){
+        location.href="/board/up";
+     }
+      }
+
+    </script>
+</body>
+</html>

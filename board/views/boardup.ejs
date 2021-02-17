@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    게시판페이지
+    <hr>
+        <div>
+            <%=upclick(data)%>
+          <% for(var i = 0; i < data.length; i++) { %>
+          <%=data[i].open %>
+            &nbsp;
+              
+           <a href="/board/show?uid=<%=gofunc(i)%>"><%=data[i].title%></a>
+            <hr>
+          <% } %>
+        </div>
+    
+        <a href="/board/write">게시글 작성하기</a> <button onclick="upclick()">정렬:최신순</button>
+
+
+        <div>
+            <button><</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>></button>
+        </div>
+            <script>
+                function upclick(){
+                  location.href="/board";
+                }
+              </script>
+</body>
+</html>

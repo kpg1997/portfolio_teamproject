@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/faviconico" type="image/x-icon">
+    <link rel="icon" href="/faviconico" type="image/x-icon">
+    <script src="/jquery"></script>
+    <title>
+        <%=data[0].title%>
+    </title>
+    <style>
+        .header {
+            background-color: #181b33;
+        }
+
+        .menu-bar ul ul li {
+            background-color: #181b33;
+            ;
+        }
+
+        @font-face {
+            src: url("/font");
+            font-family: "main-font";
+        }
+
+        body {
+            background-image: url('/boardimage');
+            background-size: cover;
+        }
+
+        .board-detail-panel {
+            width: 800px;
+            margin: auto;
+            vertical-align: middle;
+            border: 1px solid black;
+            box-shadow: 5px 5px 5px;
+            padding: 15px;
+            margin-top: 170px;
+            background-color: #181b33;
+            margin-bottom: 20%;
+            opacity: 0.9;
+            border-radius: 10px;
+        }
+
+        .board-boardno,
+        .board-title,
+        .board-userid,
+        .board-content {
+            margin-top: 13px;
+            color: white;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .button {
+            display: inline-block;
+            cursor: pointer;
+            margin-left: 15px;
+            color: white;
+        }
+
+        .button:hover {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <header id="total-header"></header>
+    </div>
+    <div class="board-detail-panel">
+        <div class="board-boardno">No : <%=data[0].boardno%>
+        </div>
+        <div class="board-title">제목 : <%=data[0].title%>
+        </div>
+        <div class="board-userid">작성자 : <%=data[0].userid%>
+        </div>
+        <div class="board-content">내용 :<br>
+            <%=data[0].content%>
+        </div>
+        <div class="buttons">
+            <div onclick="list()" class="button">목록으로</div>
+            <div onclick="update()" class="button">수정하기</div>
+            <div onclick="deleteBoard()" class="button">삭제하기</div>
+        </div>
+    </div>
+    <footer id="total-footer"></footer>
+    <script>
+        function update() {
+            location.href = '/updateBoard.html/<%=data[0].boardno%>';
+        }
+        function list() {
+            // location.href = '/board.html/1';
+            history.back();
+        }
+        function deleteBoard() {
+            var con = confirm('삭제하시겠습니까?');
+            if (con == true) {
+                location.href = '/deleteBoard/<%=data[0].boardno%>/<%=data[0].userid%>';
+            }
+        }
+        $(document).ready(function () {
+            $("#total-header").load("/header.html")
+        });
+        $(document).ready(function () {
+            $("#total-footer").load("/totalfooter.html")
+        });
+    </script>
+</body>
+
+</html>

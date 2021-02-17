@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location</title>
+    <link rel="stylesheet" href="/locationcss">
+    <link rel="shortcut icon" href="/faviconico" type="image/x-icon">
+    <link rel="icon" href="/faviconico" type="image/x-icon">
+    <script src="/jquery"></script>
+</head>
+
+<body>
+    <!-- //////////////////////상단바/////////////////////////////// -->
+    <div class="header">
+        <header id="total-header"></header>
+    </div>
+    <!-- <img style="width: 800px;margin-bottom: 13px;" src="/locationimg" alt=""> -->
+    <div class="body">
+        <div class="text-area">
+            Directions
+        </div>
+        <div class="map-area">
+            <div id="map" style="width:750px;height:350px;margin-bottom: 280px;"></div>
+
+            <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fec67ea07b3181870a3471d0e536498e"></script>
+            <script>
+                var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                    mapOption = {
+                        center: new kakao.maps.LatLng(37.53931, 127.12299), // 지도의 중심좌표
+                        level: 2, // 지도의 확대 레벨
+                        mapTypeId: kakao.maps.MapTypeId.ROADMAP // 지도종류
+                    };
+
+                // 지도를 생성한다 
+                var map = new kakao.maps.Map(mapContainer, mapOption);
+
+                // 지도에 마커를 생성하고 표시한다
+                var marker = new kakao.maps.Marker({
+                    position: new kakao.maps.LatLng(37.53931, 127.12299), // 마커의 좌표
+                    map: map // 마커를 표시할 지도 객체
+                });
+
+            </script>
+        </div>
+
+        <div class="root" style="margin-bottom: 5%;">
+            서울특별시 강동구 천호대로 995 금복빌딩 3,4층 CDPKL(지하철 5,8호선 1번출구 10m이내)
+            <br>Tel. 1234-0000-0000 / Fax. 02-479-4056
+            <br>Email. Teamproject@teamproject.com
+            <br>지하철 5,8호선 1번 출구로 올라오셔서 10m이내 금복빌딩 3층으로 올라오시면 됩니다.
+        </div>
+    </div>
+    <footer id="total-footer"></footer>
+    <script src="/locationjs"></script>
+</body>
+
+</html>
