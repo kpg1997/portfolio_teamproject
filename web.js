@@ -38,7 +38,7 @@ app.use(session({
 app.use(bodyParser.json());
 app.use(bodyParser.json());
 
-app.listen(8020, function () {
+app.listen(8002, function () {
     console.log('server running at http://127.0.0.1:8020');
 });
 //미들웨어 장착
